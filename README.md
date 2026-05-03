@@ -3,12 +3,12 @@
 Triad Protocol is a privacy-first interdisciplinary community connecting Tech, Legal, and Media contributors.
 
 This repository contains:
-- docs/           - canonical handbook, onboarding, templates, legal drafts
-- assets/         - design sources and production exports
-- scripts/        - build scripts for docs and assets
-- website_code/   - website frontend
-- media_code/     - media tooling
-- projects/       - project folders
+- `docs/`          - canonical handbook, onboarding, templates, legal drafts
+- `assets/`         - design sources and production exports
+- `scripts/`        - build scripts for docs and assets
+- `website_code/`   - website frontend
+- `media_code/`     - media tooling
+- `projects/`       - project folders
 
 Quick start
 1. Review `docs/handbook/01_Triad_Full_Protocol.md` for governance and core policies.
