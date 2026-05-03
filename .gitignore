@@ -27,3 +27,6 @@ triad_protocol_files.zip
 # Exports (production copies)
 assets/exports/
 website_code/public/static/
+
+# ignore build directory
+echo "build/" >> .gitignore
