@@ -8,3 +8,5 @@ for f in docs/handbook/*.md; do
   pandoc "$f" -o "$OUTDIR/$base.pdf" --pdf-engine=xelatex -V geometry:margin=1in -V mainfont="DejaVu Serif"
 done
 echo "Built PDFs in $OUTDIR"
+#chmod +x scripts/build_docs.sh
+#bash scripts/build_docs.sh

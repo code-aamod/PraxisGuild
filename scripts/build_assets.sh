@@ -9,3 +9,5 @@ if command -v svgo >/dev/null 2>&1; then
 fi
 cp -r "$SRC/." "$DEST/"
 echo "Copied assets to $DEST"
+#chmod +x scripts/build_assets.sh
+#bash scripts/build_assets.sh
