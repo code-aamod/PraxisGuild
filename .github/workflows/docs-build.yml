@@ -7,17 +7,19 @@ on:
 
 jobs:
   build-docs:
-    runs-on: ubuntu-latest # Change to your self-hosted arch runner if applicable
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
 
     - name: Set up pandoc and LaTeX
       run: |
-        sudo pacman -Syu --noconfirm pandoc texlive-core
+        sudo apt-get update
+        sudo apt-get install -y pandoc texlive-xetex
 
-    - name: Install WeasyPrint on Arch
+    - name: Install WeasyPrint and Dependencies
       run: |
-        sudo pacman -S --noconfirm python-weasyprint
+        sudo apt-get install -y python3-pip python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgirepository-1.0-dev
+        pip3 install weasyprint --break-system-packages
 
     - name: Build PDFs
       run: |
