@@ -1,4 +1,4 @@
-# To make changes in other than main #
+# To make changes in other than main branch
 
 # Clone the repository via HTTPS or SSH
 git clone https://github.com/code-aamod/PraxisGuild.git
@@ -11,8 +11,101 @@ git config --global user.name "Your Name"
 git config --global user.email "your-email@example.com"
 
 # Have a look at README.md
+#Working by cloning the existing repository in github to local machine
 
-# After you make changes
+# To clone 
+git clone <link>
+
+# To add the initial changes 
 git add .
 git add <file_name>
 
+# To check status
+#modified files or untracked files or staged files or unmodifies
+
+git status
+
+# To see files in terminal
+ls or ls -a
+
+# To add the initial changes 
+
+# To commit the changes
+git commit -m "message"
+
+# To push the changes
+git push origin main
+
+#To work by writing code in local machine and pushing to github 
+
+# To initialize the repository
+git init
+ 
+# To commit the changes
+git commit -m "message"
+
+# Now create a new repository in github and copy the link of the repository
+git remote add origin <link>
+
+# To verify the remote repository
+git remote -v
+
+# To change branch name
+git branch -m <new_name>
+
+# To delete the remote repository
+git remote remove origin
+
+# To remane the remote repository
+git remote rename origin <new_name>
+
+# To push the changes also -u is used to set the upstream repository so that later we can use git push 
+git push -u origin main
+
+# To create a new branch and switch to it
+git branch <new_name>
+
+# To switch to the new branch
+git switch <new_name>
+git switch -c <new_name>
+
+# To delete the branch
+git branch -d <branch_name>
+
+# To list all branches
+git branch
+
+# To switch to the main branch
+git switch main
+
+# To merge the branch to main branch and compare the changes
+git merge <branch_name>
+
+# To compare the changes
+git diff <branch_name>
+
+# To pull request to the main branch if you have changed something in your branch go to github and click on pull request and compare the changes
+
+# To update local repository to the remote repository
+git pull origin main
+
+# Undoing changes as per cases 
+# 1. To undo the staged changes
+git reset <file_name>
+git reset 
+
+
+# 2. To undo the unstaged changes
+git checkout -- <file_name>
+
+# 3. To undo last commit
+git reset HEAD~1
+
+# to check log
+git log 
+
+# to undo multiple commits :: hash from log
+git reset <commit_hash>
+
+# to also change code in vscode
+git reset --hard <commit_hash>
