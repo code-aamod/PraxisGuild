@@ -1,52 +1,48 @@
-Recommended repo layout (clean, practical)
-README.md ← top-level quick project intro & how to start
-LICENSE ← license file (placeholder or chosen license)
-.gitignore ← ignore build artifacts, node_modules, secrets
-CHANGELOG.md ← record major changes when you update policies
-SECURITY.md ← how to report security/abuse issues
-CONTRIBUTING.md ← how to contribute or propose doc edits
-docs/
-README.md ← index of the canonical docs
-handbook/ ← canonical user-facing docs
-01_Triad_Full_Protocol.md
-02_Community_Rules_Agreement.md
-... (the other numbered docs)
-developer/ ← detailed developer guides
-01_developer_implementation_guide.md
-xp_ledger_design.md
-identity_recovery_design.md
-onboarding/ ← short handouts & Welcome card
-Triad_Protocol_Welcome.md
-Onboarding_Checklist.md
-legal/ ← contracts, TOS drafts, privacy policy
-Client_Contract_Template.md
-TOS_Draft.md
-templates/ ← evidence template, campaign brief, intake forms
-Evidence_Template.md
-Campaign_Brief.md
-assets/
-source/ ← master editable design files (Figma links, .ai)
-brand/
-ranks/
-exports/ ← production-ready files consumed by website
-web/
-ranks/
-meta/
-README.md ← asset guidelines, naming rules, licenses
-LICENSES.md
-scripts/
-build_docs.sh ← pandoc commands to create PDFs
-build_assets.sh ← optimize/copy assets into website_code
-package_release.sh ← zip release artifacts
-website_code/ ← your site code (static site or app)
-media_code/
-projects/
-rankup/
-xpgain/
-architecture/
-coursemodel/
-Why this structure
-
+praxisguild/
+├── README.md
+├── LICENSE
+├── .gitignore
+├── CHANGELOG.md
+├── SECURITY.md
+├── CONTRIBUTING.md
+├── docs/
+│   ├── README.md
+│   ├── handbook/
+│   │   ├── 01_Triad_Full_Protocol.md
+│   │   └── 02_Community_Rules_Agreement.md
+│   ├── developer/
+│   │   ├── 01_developer_implementation_guide.md
+│   │   ├── xp_ledger_design.md
+│   │   └── identity_recovery_design.md
+│   └── onboarding/
+│       ├── Triad_Protocol_Welcome.md
+│       └── Onboarding_Checklist.md
+├── legal/
+│   ├── Client_Contract_Template.md
+│   └── TOS_Draft.md
+├── templates/
+│   ├── Evidence_Template.md
+│   └── Campaign_Brief.md
+├── assets/
+│   ├── source/
+│   │   ├── brand/
+│   │   └── ranks/
+│   ├── exports/
+│   │   └── web/
+│   │       ├── ranks/
+│   │       └── meta/
+│   ├── README.md
+│   └── LICENSES.md
+├── scripts/
+│   ├── build_docs.sh
+│   ├── build_assets.sh
+│   └── package_release.sh
+└── website_code/
+    └── projects/
+        ├── rankup/
+        ├── xpgain/
+        ├── architecture/
+        └── coursemodel/
 docs/ is the canonical place for all textual governance, onboarding, and developer guides (searchable, easier to publish).
 assets/ separates source design files from production exports and includes meta/ownership info.
 scripts/ contains reproducible build steps (PDF export, assets optimization).
