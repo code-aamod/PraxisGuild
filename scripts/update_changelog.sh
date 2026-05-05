@@ -6,23 +6,20 @@ TMP_FILE="temp_changelog.md"
 
 DATE=$(date +%Y-%m-%d)
 
-# 1. Generate the new unreleased header and the latest 10 commits
-echo "## [Unreleased] - $DATE" > "$TMP_FILE"
-echo "" >> "$TMP_FILE"
-git log --oneline --no-merges -n 10 | sed 's/^/- /' >> "$TMP_FILE"
+# 1. Initialize the header
+echo "# Changelog" > "$TMP_FILE"
 echo "" >> "$TMP_FILE"
 echo "All notable changes to this repository will be documented here." >> "$TMP_FILE"
 echo "" >> "$TMP_FILE"
+echo "## [Unreleased] - $DATE" >> "$TMP_FILE"
+echo "" >> "$TMP_FILE"
+echo "### Added / Updated" >> "$TMP_FILE"
 
-# 2. Append the older logs while making sure we don't duplicate headers
-if [ -f "$CHANGELOG_FILE" ]; then
-    # Skip the first 5 lines (old header and unreleased section) of the existing file
-    tail -n +6 "$CHANGELOG_FILE" >> "$TMP_FILE" || true
-fi
+# 2. Extract commits, uniquely sort them, and format them
+git log --oneline --no-merges -n 15 | \
+    sed 's/^/- /' | \
+    awk '!seen[$0]++' >> "$TMP_FILE" # Removes duplicate lines
 
-# 3. Replace the old changelog with the deduplicated temp file
+# 3. Finalize and overwrite the file
 mv "$TMP_FILE" "$CHANGELOG_FILE"
-
-echo "Changelog cleaned and updated!"
-#chmod +x scripts/update_changelog.sh
-#bash scripts/update_changelog.sh
+echo "Changelog systemized successfully!"
