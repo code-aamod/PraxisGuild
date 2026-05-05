@@ -1,0 +1,18 @@
+# PraxisGuild CODEOWNERS
+# ----------------------------------------
+# Handles: Aamod Bista (@aamodbista0663 / @archon-lead)
+# Handles: Suman (@suman-admin / @overlord-admin)
+# ----------------------------------------
+
+# Core Architecture & Governance
+/docs/handbook/             @archon-lead @overlord-admin
+
+# Modular Web & Data Projects
+/website_code/projects/     @overlord-admin
+
+# Media, Assets, and Anonymity Pipeline
+/media_code/anonymous/      @archon-lead
+/assets/source/             @design-lead
+
+# Template for Incoming Collaborators (Replace/Assign on addition)
+# /new_module/              @new-contributor-handle
