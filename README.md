@@ -14,6 +14,7 @@ Quick start
 1. Review `docs/handbook/01_Triad_Full_Protocol.md` for governance and core policies.
 2. Run `scripts/build_docs.sh` to generate PDFs (requires pandoc + xelatex).
 3. Use `scripts/build_assets.sh` to optimize and copy assets into `website_code/public/static`.
+4. Run `scripts/package_release.sh` and `update_changelog.sh` 
 
 Contributing
 See CONTRIBUTING.md and SECURITY.md.

@@ -1,4 +1,13 @@
 praxisguild/
+├── .github/
+│   ├── workflows #One or more YAML files that define GitHub Actions jobs.
+│   │   ├── docs-build.yml
+│   │   ├── ..
+│   ├── ISSUE_TEMPLATE #Templates that standardize issue and PR descriptions so contributors give the information reviewers need.
+│   │   ├── PULL_REQUEST_TEMPLATE.md
+├── CODEOWNERS #Lists teams/handles that are automatically requested for reviews when certain paths change; helpful to route governance/doc changes to the right people.
+├── dependabot.yml #Configures Dependabot to auto-create dependency-update PRs.
+├── FUNDING.yml #Shows donation/sponsorship buttons on the repo page.
 ├── README.md
 ├── LICENSE
 ├── .gitignore
@@ -37,6 +46,7 @@ praxisguild/
 │   ├── build_docs.sh
 │   ├── build_assets.sh
 │   └── package_release.sh
+└── media_code/
 └── website_code/
     └── projects/
         ├── rankup/
