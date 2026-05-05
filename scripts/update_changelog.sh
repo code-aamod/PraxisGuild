@@ -15,10 +15,10 @@ echo "## [Unreleased] - $DATE" >> "$TMP_FILE"
 echo "" >> "$TMP_FILE"
 echo "### Added / Updated" >> "$TMP_FILE"
 
-# 2. Extract commits, uniquely sort them, and format them
+# 2. Extract commits, uniquely sort them, and format them with backticks
 git log --oneline --no-merges -n 15 | \
-    sed 's/^/- /' | \
-    awk '!seen[$0]++' >> "$TMP_FILE" # Removes duplicate lines
+    sed -E 's/^([a-f0-9]+) (.*)$/- `\1` - \2/' | \
+    awk '!seen[$0]++' >> "$TMP_FILE"
 
 # 3. Finalize and overwrite the file
 mv "$TMP_FILE" "$CHANGELOG_FILE"
